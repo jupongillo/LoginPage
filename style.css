@@ -3,6 +3,7 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
@@ -27,23 +28,133 @@ body {
     border-bottom-left-radius: 10px;
 }
 
+.image-field img {
+    width: 495px;
+}
+
 h1 {
     color: #AA5FD8;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
 }
 
-form {
-    background: white; 
-    width: 365px;
-    height: 650px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-main.container-login {
+main.container {
+    background: white;
+    max-width: 510px;
+    min-height: 650px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 1rem 4rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    position: relative;
+}
+
+.input-field input {
+    outline: none;
+    width: 100%;
+    padding: 0 0.5px;
+    margin-top: 1rem;
+}
+
+form .input-field:nth-child(2) {
+    margin-bottom: 1.5rem;
+}
+
+.input-field .underline::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.input-field .underline::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background: #AA5FD8;
+    transition: all .3s ease-in-out;
+    transform: scaleX(0);
+}
+
+.input-field input:focus ~ .underline::after {
+    transform: scaleX(1);
+
+}
+
+form .btn input[type="submit"] {
+    background: linear-gradient(to left, #764295, #AA5FD8);
+    outline: none;
+    border: none;
+    margin-top: 2rem;
+    width: 100%;
+    height: 38px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+
+form .btn input[type="submit"]:hover {
+    background: linear-gradient(to right, #764295, #AA5FD8);
+    letter-spacing: 0.5px;
+}
+
+.alternative {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.social-fields a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.social-fields  {
+    width: 100%;
+}
+
+.social-fields a i {
+    margin: 0 0.5rem;
+    width: 15px;
+}
+
+main .social-fields .twitter-field {
+    background: linear-gradient(to left, #478BF4, #8BAFE5);
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.social-fields .facebook-field {
+    background: linear-gradient(to left, #3954B2, #5D88CA);  
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 3px; 
+    font-size: 0.85rem;
+    cursor: pointer;
 }
